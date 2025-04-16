@@ -5,7 +5,7 @@ import re
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
 
-# Only needed once: download VADER lexicon
+# Download VADER lexicon
 nltk.download('vader_lexicon')
 
 # Set paths
@@ -50,7 +50,7 @@ def map_location(loc):
 
 df['user_location'] = df['user_location'].apply(map_location)
 
-# Basic keyword-to-country mapping (feel free to expand)
+# Basic keyword-to-country mapping 
 country_keywords = {
     'united states': 'United States',
     'usa': 'United States',
@@ -69,7 +69,7 @@ country_keywords = {
     'mexico': 'Mexico'
 }
 
-# Map country names based on substring match
+# Map country names based on a substring match
 def extract_country(location):
     for keyword, country in country_keywords.items():
         if keyword in location:
